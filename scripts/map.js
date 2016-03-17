@@ -137,7 +137,7 @@ function getLayer(callback, cloudantView) {
 // See http://stackoverflow.com/questions/19916894/wait-for-multiple-getjson-calls-to-finish
 function searchPoints(callback, cloudantSearch) {
 	var cloudantURLbase =
-		"https://daveowens.cloudant.com/mapping-berlin/_design/tour/_search/ids?q=";
+		"https://daveowens.cloudant.com/mappingberlin/_design/tour/_search/ids?q=";
 	var cloudantURLcallback = "&callback=?";
 	var thisCloudantURL = cloudantURLbase + cloudantSearch + cloudantURLcallback;
 	$.getJSON(thisCloudantURL, function(result) {
