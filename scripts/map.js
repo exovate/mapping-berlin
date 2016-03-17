@@ -88,7 +88,7 @@ $(function() {
 
 	// list views from Cloudant that we want to offer as layers
 	var cloudantViews = [];
-	$.getJSON('https://daveowens.cloudant.com/mapping-berlin/_design/tour/',
+	$.getJSON('https://daveowens.cloudant.com/mappingberlin/_design/tour/',
 		function(result) {
 			var viewsList = result.views;
 			for (var v in viewsList) {
@@ -121,7 +121,7 @@ $("#search").submit(function(event) {
 
 function getLayer(callback, cloudantView) {
 	var cloudantURLbase =
-		"https://daveowens.cloudant.com/mapping-berlin/_design/tour/_view/";
+		"https://daveowens.cloudant.com/mappingberlin/_design/tour/_view/";
 	var cloudantURLcallback = "?callback=?";
 	var thisCloudantURL = cloudantURLbase + cloudantView + cloudantURLcallback;
 	$.getJSON(thisCloudantURL, function(result) {
@@ -156,7 +156,7 @@ function getPoints(cloudantIDs) {
 	}
 
 	function getPoint(id) {
-		var cloudantURLbase = "https://daveowens.cloudant.com/mapping-berlin/";
+		var cloudantURLbase = "https://daveowens.cloudant.com/mappingberlin/";
 		var url = cloudantURLbase + id;
 		return $.getJSON(url); // this returns a "promise"
 	}
